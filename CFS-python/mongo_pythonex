@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+
+import pymongo
+
+#conexao ao MongoDB
+client = pymongo.MongoClient('localhost', 27017)
+
+#Criacao e conexao ao banco de dados criado 
+db = client.graduacao
+
+#Criacao da collection 
+#collection = db.create_collection("cursos")
+
+#Input de dados
+'''db.client.graduacao.cursos.insert_one({
+            'nome_do_curso':'ads',
+            'valor_do_curso':'R$ 1800,00',
+            'tempo_curso':'3 anos',
+            'materias_curso':'POO'
+        })
+db.client.graduacao.cursos.insert_one({
+            'nome_do_curso':'games',
+            'valor_do_curso':'R$ 1100,00',
+            'tempo_curso':'1 anos',
+            'materias_curso':'Design de games'
+        })
+
+
+
+db.client.graduacao.cursos.insert_many(
+    [
+        {
+            'nome_do_curso':'defesa',
+            'valor_do_curso':'R$ 1600,00',
+            'tempo_curso':'2 anos',
+            'materias_curso':'Coding For Security'
+        },
+        {
+            'nome_do_curso':'devops',
+            'valor_do_curso':'R$ 1500,00',
+            'tempo_curso':'3 anos',
+            'materias_curso':'Python'
+        },
+        {
+            'nome_do_curso':'redes',
+            'valor_do_curso':'R$ 1200,00',
+            'tempo_curso':'2 anos',
+            'materias_curso':'Camada OSI'
+        }
+
+    ]
+)'''
+
+#Find
+'''resultado = db.client.graduacao.cursos.find_one({'tempo_curso':'2 anos'})
+if resultado: 
+    print(resultado)
+else:
+    print("Nada foi encontrado")'''
+
+'''resultado = db.client.graduacao.cursos.find({'tempo_curso':'2 anos'})
+for dado in resultado:
+    print(dado['nome_do_curso'])'''
+
+#update
+#resultado = db.client.graduacao.cursos.update_one({'nome_do_curso':'defesa'},{'$set': {'professor':'fabio pires'}})
+#resultado = db.client.graduacao.cursos.update_one({'nome_do_curso':'ads'},{'$set': {'materias_curso':'Banco de dados'}})
+#resultado = db.client.graduacao.cursos.update_one({'nome_do_curso':'ads'},{'$set': {'professor':'Nelson Paz'}})
+
+#delete
+#resultado = db.client.graduacao.cursos.delete_one({'professor':'Nelson Paz'})
+#resultado = db.client.graduacao.cursos.delete_many({'tempo_curso':'2 anos'})
